@@ -13,6 +13,7 @@ while len(favorites) > 0:
     print("Found ", len(favorites), " tweets.")
 
     for tweet in favorites:
+        print(favorites.index(tweet), "/", len(favorites), ": ")
         print(tweet.text)
         print()
         api.destroy_favorite(tweet.id)
