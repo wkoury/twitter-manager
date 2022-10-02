@@ -7,7 +7,7 @@ auth.set_access_token(secrets.access_token, secrets.access_token_secret)
 
 api = tweepy.API(auth)
 
-favorites = api.favorites()
+favorites = api.get_favorites()
 
 while len(favorites) > 0:
     print("Found ", len(favorites), " tweets.")
@@ -18,7 +18,7 @@ while len(favorites) > 0:
         print()
         api.destroy_favorite(tweet.id)
         time.sleep(2)
-    
-    favorites = api.favorites()
+
+    favorites = api.get_favorites()
 
 print("No more new tweets to unlike!")
